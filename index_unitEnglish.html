@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Base du JS</title>
+    <style>
+        
+        .st-conv { color:#FF3300; padding-bottom:1em;}
+        .tabl { display:inline-block;  vertical-align:top; padding-bottom:1em; }
+        .tabl tr { vertical-align:top; }
+        .tabl td { padding-left:2em;  padding-right:2em; white-space:nowrap; line-height:1.4em; }
+        @media screen and (max-width:960px) { 
+        .tabl td { padding-left:0.5em; padding-right:0.5em; white-space:normal; }
+        .st-conv { text-align:left;}
+        }
+
+    </style>
+</head>
+<body>
+        <div class="sta">Conversion des distances</div>
+        <br>
+        <form name="distances">
+            <noscript>
+                <span class="span-red">Attention ! &nbsp; JavaScript n'est pas activé.</span><br>
+                Vous devez activer JavaScript dans votre navigateur pour pouvoir utiliser Lexilogos&#8239;: veuillez suivre les 
+                <a class="ext" href="https://www.enable-javascript.com/fr/" target="_blank">instructions</a>.<br><br>
+            </noscript>
+            <div class="marg10">
+                <table class="tabl">
+                    <tbody>
+                        <tr class="center">
+                            <td class="st-conv">métrique</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>kilomètre</td>
+                        </tr>
+                        <tr>
+                            <td><input name="km" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>mètre</td>
+                        </tr>
+                        <tr>
+                            <td><input name="m" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>centimètre</td>
+                        </tr>
+                        <tr>
+                            <td><input name="cm" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr class="center">
+                            <td colspan="2" class="st-conv">système anglais</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>mile</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="mia" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>rod</td>
+                            <td>cable length</td>
+                        </tr>
+                        <tr>
+                            <td><input name="roa" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td><input name="ena" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>fathom</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input name="bra" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>yard</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="yda" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>foot</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="pia" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>inch</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="poa" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr class="center">
+                            <td class="st-conv">nautique</td>
+                        </tr>
+                        <tr>
+                            <td>lieue</td>
+                        </tr>
+                        <tr>
+                            <td><input name="ln" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>mille</td>
+                        </tr>
+                        <tr>
+                            <td><input name="mn" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>encablure</td>
+                        </tr>
+                        <tr>
+                            <td><input name="enn" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><a class="liai" href="#brasse">brasse</a>*</td>
+                        </tr>
+                        <tr>
+                            <td><input name="brn" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td class="center"><br>
+                        <br>
+                            <input type="button" class="eff" title="effacer" onclick="reset();" value=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr class="center">
+                            <td colspan="2" class="st-conv">système français</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>mille</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input name="mif" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>encablure</td>
+                            <td>perche</td>
+                        </tr>
+                        <tr>
+                            <td><input name="en" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td><input name="pef" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>brasse</td>
+                            <td>toise</td>
+                        </tr>
+                        <tr>
+                            <td><input name="br" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                            <td><input name="tof" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>verge</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input name="vef" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>pied</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input name="pif" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>pouce</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input name="pof" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr class="center">
+                            <td class="st-conv">romain</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>milia</td>
+                        </tr>
+                        <tr>
+                            <td><input name="mr" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="mobnul">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>passus</td>
+                        </tr>
+                        <tr>
+                            <td><input name="pasr" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>gradus</td>
+                        </tr>
+                        <tr>
+                            <td><input name="gr" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>pes</td>
+                        </tr>
+                        <tr>
+                            <td><input name="pr" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>digitus</td>
+                        </tr>
+                        <tr>
+                            <td><input name="dr" type="text" size="12" onkeyup="updatedistance(this)" onchange="updatedistance(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        
+        
+        <div class="st">Conversion des vitesses</div>
+        <br>
+        <form name="vitesses">
+            <div class="marg10">
+                <table class="tabl">
+                    <tbody>
+                        <tr>
+                            <td>kilomètre/heure</td>
+                        </tr>
+                        <tr>
+                            <td><input name="kmh" type="text" size="12" onkeyup="updatevitesse(this)" onchange="updatevitesse(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>mètre/seconde</td>
+                        </tr>
+                        <tr>
+                            <td><input name="ms" type="text" size="12" onkeyup="updatevitesse(this)" onchange="updatevitesse(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr>
+                            <td>mile per hour (mph)</td>
+                        </tr>
+                        <tr>
+                            <td><input name="mph" type="text" size="12" onkeyup="updatevitesse(this)" onchange="updatevitesse(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr>
+                            <td>nœud</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="kt" type="text" size="12" onkeyup="updatevitesse(this)" onchange="updatevitesse(this)"></td>
+                            <td><input type="button" class="eff" title="effacer" onclick="reset();" value=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        
+        
+        <div class="st">Conversion des poids</div>
+        <br>
+        <form name="poids">
+            <div class="marg10">
+                <table class="tabl">
+                <tbody><tr>
+                <td>kilogramme (kg)</td>
+                </tr>
+                <tr>
+                <td><input name="kg" type="text" size="12" onkeyup="updatepoids(this)" onchange="updatepoids(this)"></td>
+                </tr>
+                <tr>
+                <td>gramme (g)</td>
+                </tr>
+                <tr>
+                <td><input name="g" type="text" size="12" onkeyup="updatepoids(this)" onchange="updatepoids(this)"></td>
+                </tr>
+                
+                
+                </tbody></table>
+                <table class="tabl">
+                    <tbody>
+                        <tr>
+                            <td>pound (lb)</td>
+                        </tr>
+                        <tr>
+                            <td><input name="lbs" type="text" size="12" onkeyup="updatepoids(this)" onchange="updatepoids(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>ounce (oz)</td>
+                        </tr>
+                        <tr>
+                            <td><input name="oz" type="text" size="12" onkeyup="updatepoids(this)" onchange="updatepoids(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tabl">
+                    <tbody>
+                        <tr>
+                            <td>libra</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="ll" type="text" size="12" onkeyup="updatepoids(this)" onchange="updatepoids(this)"></td>
+                            <td><input type="button" class="eff" title="effacer" onclick="reset();" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>uncia</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input name="ul" type="text" size="12" onkeyup="updatepoids(this)" onchange="updatepoids(this)"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        <div class="espa"></div>
+
+    <script src="index_unitEnglish.js"> </script>
+</body>
+</html>
