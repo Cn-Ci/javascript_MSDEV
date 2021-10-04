@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.btnSubmit {
+    color: white;
+    background: rgb(182, 166, 132);
+}
+
+.btnSubmit:hover {
+    color: rgb(182, 166, 132);
+    background: black;
+}

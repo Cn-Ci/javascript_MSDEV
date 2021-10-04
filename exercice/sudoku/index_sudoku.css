@@ -1,0 +1,55 @@
+body {
+    --purple : rgb(148, 5, 77);
+
+    background: var(--purple);
+    margin: 0;
+    padding: 50px;
+}
+#app {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 0rem;
+    list-style: none;
+    margin: 0 0 2vw;
+    padding: 0;
+    font-size: calc(2vw + 10px);
+}
+
+.case:nth-child(3n+4) {
+    border-top-width: 8px;
+}
+
+.trait_dessus {
+    border-right-width: 8px !important;
+    border-right-color: red;
+}
+
+.case {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: 1px ridge var(--purple);
+    background: white;
+}
+
+.case:hover {
+    background: rgba(87, 31, 54, 0.103);
+    color: white
+}
+
+#retry, #level, #erase, #indice {
+    background: white;
+    color:var(--purple);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px
+}
+
+#retry:hover, #level:hover, #erase:hover, #indice:hover {
+    background: var(--purple);
+    color: white;
+    margin: 10px
+}
+
