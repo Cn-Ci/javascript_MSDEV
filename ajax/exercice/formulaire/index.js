@@ -162,10 +162,10 @@ let handleFormSubmit = (evt) => {
         method : 'post',
         body : JSON.stringify({
             genre: genre.value,
-            lastName: lastName.value,
+            lastname: lastName.value,
             firstname: firstName.value,
             email: email.value,
-            mdp: mdp.value,
+            password: mdp.value,
             confirmMdp: confirmMdp.value,
             describ: describ.value
         })

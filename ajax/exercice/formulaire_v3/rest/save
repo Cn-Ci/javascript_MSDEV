@@ -1,0 +1,11 @@
+include_once 'DbManager.php' ;
+include_once 'Argon2.php';
+$dbManager = new DbManager("account");
+
+$_post = json_decode(file_get_contents('php://input'), true);
+$token = Argon2::verifyToken($_post['token'], false);
+$id = $token->id;
+$infoUser =  $dbManager->getOne($id);
+$userInfo = (['firstName'=>$infoUser->firstName,'lastName'=>$infoUser->lastName,'email'=>$infoUser->email]);
+echo json_encode($userInfo);
+$pb;

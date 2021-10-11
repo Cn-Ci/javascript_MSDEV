@@ -30,7 +30,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    border: 1px ridge var(--purple);
+    border: 1px solid var(--purple);
     background: white;
 }
 
@@ -39,7 +39,7 @@ body {
     color: white
 }
 
-#retry, #level, #erase, #indice {
+#retry, #level, #erase, #indice, #verif {
     background: white;
     color:var(--purple);
     font-weight: bold;
@@ -47,7 +47,7 @@ body {
     margin: 10px
 }
 
-#retry:hover, #level:hover, #erase:hover, #indice:hover {
+#retry:hover, #level:hover, #erase:hover, #indice:hover, #verif:hover {
     background: var(--purple);
     color: white;
     margin: 10px
